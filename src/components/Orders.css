@@ -1,0 +1,61 @@
+.orders-table {
+    width: 100%;
+    
+    /* font-family: Arial, sans-serif; */
+    background-color: white;
+    /* border-radius: 8px; */
+    /* padding: 20px; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  .buy-mode {
+    color: green; /* Adjust the color for 'BUY' orders */
+    font-weight: bold;
+  }
+  
+  .sell-mode {
+    color: red; /* Adjust the color for 'SELL' orders */
+    font-weight: bold;
+  }
+  
+  
+  th {
+    background-color: whitesmoke;
+    color: rgb(145, 145, 145);
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .no-orders {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .no-orders p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,84 @@
+/* ProfileDropDown.css */
+
+.profile-dropdown {
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 1rem;
+    width: 18rem; /* Width of the dropdown */
+    border: 1px solid #e5e7eb; /* Border around the dropdown */
+  }
+  
+  .profile-info {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb; /* Border under profile info */
+  }
+  
+  .profile-name {
+    font-size: 1.125rem; /* Font size for the profile name */
+    font-weight: 600; /* Semi-bold text */
+    color: #1f2937; /* Dark gray color */
+  }
+  
+  .profile-email {
+    font-size: 0.875rem; /* Font size for the profile email */
+    color: #4b5563; /* Medium gray color */
+  }
+  
+  .profile-dropdown ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-dropdown li {
+    margin-bottom: 0.5rem; /* Space between list items */
+  }
+  
+  .profile-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: #1f2937; /* Dark gray text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 0.5rem; /* Rounded corners for items */
+  }
+  
+  .profile-dropdown a:hover {
+    background-color: #f3f4f6; /* Light gray background on hover */
+  }
+  
+  .profile-dropdown svg {
+    margin-right: 0.75rem; /* Space between icon and text */
+  }
+  
+  .profile-dropdown .font-medium {
+    font-weight: 500; /* Medium font weight for dropdown item text */
+  }
+  
+  .profile-dropdown .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .profile-dropdown button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: #dc2626; /* Red background color */
+    color: #ffffff; /* White text color */
+    border-radius: 0.75rem; /* Rounded corners */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s; /* Smooth transition effect */
+  }
+  
+  .profile-dropdown button:hover {
+    background-color: #b91c1c; /* Darker red on hover */
+  }
+  
+  .profile-dropdown .font-semibold {
+    font-weight: 600; /* Semi-bold text for the button */
+  }
+  
