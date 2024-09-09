@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         if (response.data && response.data.status && response.data.user) {
           setUserData(response.data.user);
         }
@@ -29,7 +29,7 @@ const BuyActionWindow = ({ uid }) => {
   const handleBuyClick = async () => {
     try {
       // Make the first request to place the order
-      const orderResponse = await axios.post("http://localhost:3000/newOrder", {
+      const orderResponse = await axios.post("https://staock-backend.onrender.com/newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
@@ -38,7 +38,7 @@ const BuyActionWindow = ({ uid }) => {
       });
 
       // Make the second request to update stock holdings AND Positions
-      const stockResponse = await axios.post("http://localhost:3000/buyStock", {
+      const stockResponse = await axios.post("https://staock-backend.onrender.com/buyStock", {
         stockSymbol: uid, // Assuming uid is used as stock symbol here
         quantity: stockQuantity,
         price: stockPrice,

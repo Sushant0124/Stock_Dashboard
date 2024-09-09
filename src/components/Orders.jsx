@@ -12,7 +12,7 @@ const Orders = () => {
     const fetchUserData = async () => {
       try {
         console.log("Fetching user data...");
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         console.log("Response received:", response);
         if (response.data && response.data.status && response.data.user) {
           console.log("User data:", response.data.user);
@@ -33,7 +33,7 @@ const Orders = () => {
     if (userData) {
       console.log("Fetching orders for user:", userData.id);
       axios
-        .get(`http://localhost:3000/allOrders`, {
+        .get(`https://staock-backend.onrender.com/allOrders`, {
           params: { user: userData.id }, // Passing user ID in query params
         })
         .then((response) => {

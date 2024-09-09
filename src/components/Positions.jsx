@@ -10,7 +10,7 @@ const Positions = () => {
     const fetchUserData = async () => {
       try {
         console.log("Fetching user data...");
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         console.log("Response received:", response);
         if (response.data && response.data.status && response.data.user) {
           console.log("User data:", response.data.user);
@@ -30,7 +30,7 @@ const Positions = () => {
   useEffect(() => {
     if (userData) {
       axios
-        .get(`http://localhost:3000/allPositions?user=${userData.id}`) // Passing user ID as a query parameter
+        .get(`https://staock-backend.onrender.com/allPositions?user=${userData.id}`) // Passing user ID as a query parameter
         .then((res) => {
           console.log(res.data);  // Debugging purposes
           setPositions(res.data);

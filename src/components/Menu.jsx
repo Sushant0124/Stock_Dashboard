@@ -12,7 +12,7 @@ const Menu = () => {
     const fetchUserData = async () => {
       try {
         console.log("Fetching user data...");
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         console.log("Response received:", response);
         if (response.data && response.data.status && response.data.user) {
           console.log("User data:", response.data.user);
@@ -41,7 +41,7 @@ const Menu = () => {
   const handleLogout = () => {
     // removeCookie("token");
     // Redirect to the login page after logout
-    window.location.href = "http://localhost:5173";
+    window.location.href = "https://stock-frontend-vidu.vercel.app/";
 };
 
   const menuClass = "menu";

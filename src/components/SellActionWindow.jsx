@@ -14,7 +14,7 @@ const SellActionWindow = ({ uid }) => {
   useEffect(() => {
     // Fetch the user's holdings to check available quantity
     axios
-      .get(`http://localhost:3000/allHoldings/${uid}`)
+      .get(`https://staock-backend.onrender.com/allHoldings/${uid}`)
       .then((response) => {
         const holding = response.data;
         setAvailableQuantity(holding.qty || 0);
@@ -28,7 +28,7 @@ const SellActionWindow = ({ uid }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         if (response.data && response.data.status && response.data.user) {
           setUserData(response.data.user);
         }
@@ -48,7 +48,7 @@ const SellActionWindow = ({ uid }) => {
 
     try {
       // Place the sell order
-      const orderResponse = await axios.post("http://localhost:3000/newOrder", {
+      const orderResponse = await axios.post("https://staock-backend.onrender.com/newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
@@ -59,7 +59,7 @@ const SellActionWindow = ({ uid }) => {
       console.log('Sell order response:', orderResponse.data);
 
       // Update stock holdings
-      const updateResponse = await axios.post("http://localhost:3000/sellStock", {
+      const updateResponse = await axios.post("https://staock-backend.onrender.com/sellStock", {
         stockSymbol: uid,
         quantity: stockQuantity,
         price: stockPrice,
