@@ -30,7 +30,7 @@ const BuyActionWindow = ({ uid }) => {
     try {
       // Make the first request to place the order
       const orderResponse = await axios.post("https://staock-backend.onrender.com/newOrder", {
-        name: uid,
+        name: uid.name,
         qty: stockQuantity,
         price: stockPrice,
         mode: "BUY",
@@ -39,7 +39,7 @@ const BuyActionWindow = ({ uid }) => {
 
       // Make the second request to update stock holdings AND Positions
       const stockResponse = await axios.post("https://staock-backend.onrender.com/buyStock", {
-        stockSymbol: uid, // Assuming uid is used as stock symbol here
+        stockSymbol: uid.name, // Assuming uid is used as stock symbol here
         quantity: stockQuantity,
         price: stockPrice,
         user: userData.id
