@@ -6,7 +6,7 @@ import "./BuyActionWindow.css";
 const BuyActionWindow = ({ uid }) => {
   const [userData, setUserData] = useState(null);
   const [stockQuantity, setStockQuantity] = useState(1);
-  const [stockPrice, setStockPrice] = useState(0.0);
+  const [stockPrice, setStockPrice] = useState();
   const [error, setError] = useState(null);
   const { closeBuyWindow } = useContext(GeneralContext); // Access context value
 
