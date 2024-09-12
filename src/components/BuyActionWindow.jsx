@@ -80,7 +80,7 @@ const BuyActionWindow = ({ uid }) => {
         <input
           type="number"
           id="price"
-          step="0.05"
+          
           value={stockPrice}
           onChange={(e) => setStockPrice(Number(e.target.value))}
         />
