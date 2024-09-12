@@ -13,7 +13,7 @@ const Summary = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
+        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
         if (response.data && response.data.status && response.data.user) {
           console.log(response.data.user);
           setUserData(response.data.user);
@@ -31,7 +31,7 @@ const Summary = () => {
 
   const fetchAggregatedData = useCallback(async (userId) => {
     try {
-      const response = await axios.get(`https://staock-backend.onrender.com/user/aggregatedData/${userId}`, { withCredentials: true });
+      const response = await axios.get(`http://localhost:3000/user/aggregatedData/${userId}`, { withCredentials: true });
       if (response.data) {
         setHoldingsData({
           labels: response.data.holdingsData.map(item => item.label),
@@ -76,10 +76,11 @@ const Summary = () => {
       <div className="username">
         <h6>Hi, {userData.username}!</h6>
       </div>
-<hr></hr>
+  
+      <hr />
+  
       <div className="section equity-section">
-        {/* Equity section */}
-        <p>Equity</p>
+        <h4>Equity</h4>
         <div className="data">
           <div className="first">
             <h3>1L</h3>
@@ -90,13 +91,13 @@ const Summary = () => {
             <p>Margins used <span>0</span></p>
             <p>Opening balance <span>1L</span></p>
           </div>
-          {/* <a href="#" className="view-statement">View statement</a> */}
         </div>
       </div>
-<hr></hr>
+  
+      <hr />
+  
       <div className="section commodity-section">
-        {/* Commodity section */}
-        <p>Commodity</p>
+        <h4>Commodity</h4>
         <div className="data">
           <div className="first">
             <h3>50k</h3>
@@ -107,27 +108,25 @@ const Summary = () => {
             <p>Margins used <span>0</span></p>
             <p>Opening balance <span>50k</span></p>
           </div>
-          {/* <a href="#" className="view-statement">View statement</a> */}
         </div>
       </div>
-<hr></hr>
-      {/* Holdings section */}
+  
+      <hr />
+  
       <div className="section holdings-section">
-        <p>Holdings ({userData.holdings ? userData.holdings.length : 0})</p>
-        <div className="data">
-          <VerticalGraph data={holdingsData} />
-        </div>
+        <h4>Holdings ({userData.holdings ? userData.holdings.length : 0})</h4>
+        <VerticalGraph data={holdingsData} />
       </div>
-<hr></hr>
-      {/* Positions section */}
+  
+      <hr />
+  
       <div className="section positions-section">
-        <p>Positions ({userData.positions ? userData.positions.length : 0})</p>
-        <div className="data">
-          <VerticalGraph data={positionsData} />
-        </div>
+        <h4>Positions ({userData.positions ? userData.positions.length : 0})</h4>
+        <VerticalGraph data={positionsData} />
       </div>
     </div>
   );
+  
 };
 
 export default Summary;
