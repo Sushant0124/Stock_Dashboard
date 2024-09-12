@@ -13,7 +13,7 @@ const Summary = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/profile", { withCredentials: true });
+        const response = await axios.get("https://staock-backend.onrender.com/user/profile", { withCredentials: true });
         if (response.data && response.data.status && response.data.user) {
           console.log(response.data.user);
           setUserData(response.data.user);
@@ -31,7 +31,7 @@ const Summary = () => {
 
   const fetchAggregatedData = useCallback(async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/aggregatedData/${userId}`, { withCredentials: true });
+      const response = await axios.get(`https://staock-backend.onrender.com/user/aggregatedData/${userId}`, { withCredentials: true });
       if (response.data) {
         setHoldingsData({
           labels: response.data.holdingsData.map(item => item.label),
