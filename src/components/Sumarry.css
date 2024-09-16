@@ -1,142 +1,143 @@
 /* General container styling */
 .summary-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-  }
-  
-  /* Username styling */
-  .username h6 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: rgb(83, 83, 83);
-    margin-bottom: 20px;
-  }
-  
-  /* Divider styling */
-  .divider {
-    border: none;
-    background: #bbb7b7;
-    height: 1px;
-    margin: 20px 0;
-  }
-  
-  /* Section styling */
-  .section {
-    padding-bottom: 2%;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Data section styling */
-  .data {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .data .first,
-  .data .second {
-    text-align: center;
-    flex: 1;
-  }
-  
-  .data .first h3 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: rgb(71, 71, 71);
-  }
-  
-  .data .first p {
-    font-size: 0.8rem;
-    color: rgb(136, 136, 136);
-  }
-  
-  .data .first .profit {
-    color: rgb(72, 194, 55);
-  }
-  
-  .data hr {
-    border-left: 0.6px solid rgb(243, 242, 242);
-    height: 70px;
-  }
-  
-  .data .second p {
-    font-size: 0.8rem;
-    color: rgb(136, 136, 136);
-    margin-bottom: 10px;
-  }
-  
-  .data .second p span {
-    font-size: 0.9rem;
-    color: rgb(100, 100, 100);
-  }
-  
-  /* Link styling */
-  .view-statement {
-    color: rgb(0, 122, 255);
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .view-statement:hover {
-    text-decoration: underline;
-  }
-  
-  /* Holdings section styling */
-  .holdings-section {
-    width: 100%;
-  height: 500px; /* Increased height for larger graph */
-  margin-top: 20px;
-  }
-  
-  .holdings-section p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 10px;
-  }
-  
-  .holdings-graph {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .bar-graph {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 90%; 
-  }
-  
-  .bar-section {
-    height: 120px; /* Increased height for each bar */
-    margin: 10px 0; /* Added margin for spacing between bars */
-    border-radius: 5px;
-  }
-  
-  .blue { background-color: #007bff; }
-  .lightblue { background-color: #add8e6; }
-  .purple { background-color: #6f42c1; }
-  .green { background-color: #28a745; }
-  .yellow { background-color: #ffc107; }
-  
-  /* Positions section styling */
-  .positions-section {
-    width: 100%;
-  height: 500px; /* Increased height for larger graph */
-  margin-top: 20px;
-  }
-  
-  .positions-section p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 10px;
-  }
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #f4f6f9; /* Softer background color */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Added soft shadow */
+}
+
+/* Username styling */
+.username h6 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Divider styling */
+hr {
+  border: none;
+  height: 1px;
+  background: #dfe4ea;
+  margin: 30px 0;
+}
+
+/* Section styling */
+.section {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Data section styling */
+.data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.data .first,
+.data .second {
+  text-align: center;
+  flex: 1;
+}
+
+.data .first h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.data .first p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.data hr {
+  border-left: 1px solid #ecf0f1;
+  height: 100px;
+}
+
+.data .second p {
+  font-size: 1rem;
+  color: #95a5a6;
+}
+
+.data .second p span {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+/* Holdings section styling */
+.holdings-section,
+.positions-section {
+  width: 100%;
+  height: 400px;
+  margin-top: 30px;
+  padding: 20px;
+  background: #fdfefe;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.holdings-section p,
+.positions-section p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Graph Styling */
+.bar-graph {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.bar-section {
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+/* Improved color styling for bars */
+.blue {
+  background-color: #2980b9;
+}
+.lightblue {
+  background-color: #3498db;
+}
+.purple {
+  background-color: #9b59b6;
+}
+.green {
+  background-color: #27ae60;
+}
+.yellow {
+  background-color: #f1c40f;
+}
+
+/* Call-to-action buttons and links */
+.view-statement {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.view-statement:hover {
+  background-color: #1f639a;
+}
+
