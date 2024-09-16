@@ -5,6 +5,9 @@ import { VerticalGraph } from "./VerticalGraph";
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
   const [userData, setUserData] = useState(null);
+  const [totalInvestment, setTotalInvestment] = useState(0);
+  const [currentValue, setCurrentValue] = useState(0);
+  const [pnl, setPnl] = useState(0);
 
   // Fetching current user details from cookies token  
   useEffect(() => {
@@ -35,6 +38,13 @@ const Holdings = () => {
         .then((res) => {
           console.log(res.data);  // Debugging purposes
           setAllHoldings(res.data);
+
+          // Calculate Total Investment and Current Value
+          const totalInv = res.data.reduce((sum, stock) => sum + stock.qty * stock.avg, 0);
+          const curVal = res.data.reduce((sum, stock) => sum + stock.qty * stock.price, 0);
+          setTotalInvestment(totalInv);
+          setCurrentValue(curVal);
+          setPnl(curVal - totalInv);
         })
         .catch((error) => {
           console.error("Error fetching holdings:", error);
@@ -103,18 +113,20 @@ const Holdings = () => {
       <div className="row">
         <div className="col">
           <h5>
-            29,875.<span>55</span>
+            {totalInvestment.toFixed(2)}
           </h5>
           <p>Total investment</p>
         </div>
         <div className="col">
           <h5>
-            31,428.<span>95</span>
+            {currentValue.toFixed(2)}
           </h5>
           <p>Current value</p>
         </div>
         <div className="col">
-          <h5>1,553.40 (+5.20%)</h5>
+          <h5>
+            {pnl.toFixed(2)} ({((pnl / totalInvestment) * 100).toFixed(2)}%)
+          </h5>
           <p>P&L</p>
         </div>
       </div>
