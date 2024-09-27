@@ -20,7 +20,7 @@ const SellActionWindow = ({ uid }) => {
         setAvailableQuantity(holding.qty || 0);
       })
       .catch((error) => {
-        console.error("Error fetching holdings:", error);
+        // console.error("Error fetching holdings:", error);
         setError("Error fetching holdings. Please try again.");
       });
   }, [uid]);
